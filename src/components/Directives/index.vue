@@ -1,9 +1,9 @@
 <template>
     <div>
         <div v-awesome:red="textToRender"></div>
-        <div v-awesome:blue="textToRender"></div>
-        <div v-awesome="textToRender"></div>
-
+        <button @click="textToRender = 'something else'">
+            Trigger update1
+        </button>
     </div>
 </template>
 

@@ -6,7 +6,13 @@ import Header from "./components/header_footer/Header.vue";
 const app = createApp(App);
 
 app.directive("awesome", {
+  created(el) {
+    console.log("created");
+    console.log(el.parentNode);
+  },
   beforeMount(el, binding, vnode) {
+    console.log("beforeMount");
+    console.log(el.parentNode);
     // el.innerHTML = "Hello World";
     el.innerHTML = binding.value;
 
@@ -17,6 +23,13 @@ app.directive("awesome", {
     } else {
       el.style.color = "yellow";
     }
+  },
+  mounted(el) {
+    console.log(el.parentNode);
+  },
+
+  beforeUpdate(el) {
+    console.log(el.parentNode);
   },
 });
 app.component("app-header", Header);
